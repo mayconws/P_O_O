@@ -1,5 +1,6 @@
 package Principal;
 
+import java.sql.ResultSet;
 import java.util.Scanner;
 
 import dao.DAOCidade;
@@ -11,8 +12,42 @@ import entidade.Estado;
 
 public class Principal {
 	
-	public static void main(String[] args) {		
-				 
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		int opcao = 0;
+		
+		do {
+			System.out.println("Informe a opção desejada: "
+					+ "\n1 - Inserir"
+					+ "\n2 - Buscar"
+					+ "\n3 - Alterar"
+					+ "\n4 - Excluir"
+					+ "\n5 - Sair");
+			
+			opcao = scan.nextInt();
+			
+			if (opcao == 1) {
+				Estado estado = new Estado();
+				DAOEstado dao = new DAOEstado();
+				Scanner est = new Scanner(System.in);
+				System.out.println("Digite o nome do Estado: ");
+				String nome = scan.next();
+				estado.setNome(nome);	
+				
+				System.out.println("Digite a Sigla: ");
+				String sigla = scan.next();
+				estado.setSigla(sigla);
+				
+				dao.salvar(estado);
+				
+			}else if (opcao == 2){
+				
+			}
+			
+		} while (opcao != 5);
+		
+		/*		 
 		Estado estado = new Estado();
 		DAOEstado dao = new DAOEstado();
 		Scanner scan = new Scanner(System.in);
@@ -56,7 +91,7 @@ public class Principal {
 		cliente.setTelefone(telefone);
 		
 		dao2.salvar(cliente);
-		
+		*/
 	}
 
 }
