@@ -37,6 +37,7 @@ public class DAOEstado {
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
+			estado = gerenciador.find(Estado.class, estado.getId());
 			gerenciador.remove(estado);
 			transacao.commit();
 		} catch (Exception e) {
@@ -63,12 +64,20 @@ public class DAOEstado {
 	}
 
 	public List<Estado> Buscar() {
+		try {
 
 		EntityManagerFactory fabrica = Fabrica.get();
 		gerenciador = fabrica.createEntityManager();
 
 		return gerenciador.createQuery("from estado").getResultList();		
 		
+		} catch (Exception e) {
+				e.printStackTrace();
+				transacao.rollback();
+		} finally {
+				gerenciador.close();
+		}
+		return null;		
 		
 		}
 	}
