@@ -66,19 +66,18 @@ public class DAOEstado {
 	public List<Estado> Buscar() {
 		try {
 
-		EntityManagerFactory fabrica = Fabrica.get();
-		gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory fabrica = Fabrica.get();
+			gerenciador = fabrica.createEntityManager();
 
-		return gerenciador.createQuery("from estado").getResultList();		
-		
+			return gerenciador.createQuery("from estado").getResultList();
+
 		} catch (Exception e) {
-				e.printStackTrace();
-				transacao.rollback();
+			e.printStackTrace();
+			transacao.rollback();
 		} finally {
-				gerenciador.close();
+			gerenciador.close();
 		}
-		return null;		
-		
-		}
-	}
+		return null;
 
+	}
+}

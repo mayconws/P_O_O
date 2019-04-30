@@ -7,6 +7,10 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>entidade.Estado</class>
 		<class>entidade.Cidade</class>
+		<class>entidade.Venda</class>
+		<class>entidade.ItensVenda</class>
+		<class>entidade.Produto</class>
+		<class>entidade.Cliente</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/aula" />

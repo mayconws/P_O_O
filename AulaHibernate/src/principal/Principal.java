@@ -35,12 +35,13 @@ public class Principal {
 				System.out.println("-----------------");
 				System.out.println("Digite o estado: ");
 				String nome = scan.next();
+				scan.nextLine();	
 				estado.setNome(nome);
 
 				Scanner scan1 = new Scanner(System.in);
 				System.out.println("----------------");
 				System.out.println("Digite a sigla: ");
-				String sigla = scan.next();
+				String sigla = scan.next();				
 				estado.setSigla(sigla);
 
 				dao.Inserir(estado);
@@ -58,12 +59,13 @@ public class Principal {
 				System.out.println("---------------------------------------");
 				System.out.println("Informe o ID para realizar a aleração: ");	
 				estado.setId(scan.nextLong());
-				System.out.println("Novo nome: ");
-				estado.setNome(scan.next());
-				System.out.println("Nova sigla: ");
+				System.out.println("Digite o novo nome: ");
+				estado.setNome(scan.next());				
+				System.out.println("Digite a nova sigla: ");
 				estado.setSigla(scan.next());
 				
 				System.out.println("Alterando...");
+				
 				dao.Alterar(estado);				
 
 			} else if (opcao == 4) {

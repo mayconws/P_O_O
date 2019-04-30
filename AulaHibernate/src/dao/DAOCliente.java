@@ -6,71 +6,70 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-import entidade.Cidade;
-import entidade.Estado;
+import entidade.Cliente;
 import fabrica.Fabrica;
 
-public class DAOCidade {
-
+public class DAOCliente {
+	
 	private EntityManager gerenciador;
 	private EntityTransaction transacao;
 
-	public Estado Inserir(Estado cidade) {
+	public Cliente Inserir(Cliente cliente) {
 		try {
 			EntityManagerFactory fabrica = Fabrica.get();
 			gerenciador = fabrica.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
-			gerenciador.persist(cidade);
+			gerenciador.persist(cliente);
 			transacao.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			transacao.rollback();
 		}
-		return cidade;
+		return cliente;
 	}
-
-	public Cidade Remover(Cidade cidade) {
+	
+	public Cliente Remover(Cliente cliente) {
 		try {
 			EntityManagerFactory fabrica = Fabrica.get();
 			gerenciador = fabrica.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
-			cidade = gerenciador.find(Cidade.class, cidade.getId());
-			gerenciador.remove(cidade);
+			cliente = gerenciador.find(Cliente.class, cliente.getId());
+			gerenciador.remove(cliente);
 			transacao.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			transacao.rollback();
 		}
-		return cidade;
+		return cliente;
 	}
-
-	public Cidade Alterar(Cidade cidade) {
+	
+	public Cliente Alterar(Cliente cliente) {
 		try {
 			EntityManagerFactory fabrica = Fabrica.get();
 			gerenciador = fabrica.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
-			gerenciador.merge(cidade);
+			gerenciador.merge(cliente);
 			transacao.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 			transacao.rollback();
 		}
-		return cidade;
+		return cliente;
 	}
-
-	public List<Cidade> Buscar() {
+	
+	public List<Cliente> Buscar() {
 		try {
 
 			EntityManagerFactory fabrica = Fabrica.get();
 			gerenciador = fabrica.createEntityManager();
 
-			return gerenciador.createQuery("from cidade").getResultList();
+			return gerenciador.createQuery("from cliente").getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();
