@@ -14,6 +14,30 @@ public class ItensVenda {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public Double getPreco() {
+		return preco;
+	}
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+	public Venda getVenda() {
+		return venda;
+	}
+	public void setVenda(Venda venda) {
+		this.venda = venda;
+	}
 	private int quantidade;
 	private Double preco;
 	@ManyToOne

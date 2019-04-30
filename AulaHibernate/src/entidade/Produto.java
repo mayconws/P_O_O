@@ -18,5 +18,41 @@ public class Produto {
 	private Double preco;
 	@ManyToOne
 	private ItensVenda itensVenda;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getQtdManima() {
+		return qtdManima;
+	}
+	public void setQtdManima(int qtdManima) {
+		this.qtdManima = qtdManima;
+	}
+	public int getQtdMinima() {
+		return qtdMinima;
+	}
+	public void setQtdMinima(int qtdMinima) {
+		this.qtdMinima = qtdMinima;
+	}
+	public Double getPreco() {
+		return preco;
+	}
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+	public ItensVenda getItensVenda() {
+		return itensVenda;
+	}
+	public void setItensVenda(ItensVenda itensVenda) {
+		this.itensVenda = itensVenda;
+	}
 	
 }
