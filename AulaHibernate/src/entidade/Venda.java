@@ -17,6 +17,30 @@ public class Venda {
 	private Date data;
 	private Double precoTotal;
 	@ManyToOne
-	private Cliente cliente;	
+	private Cliente cliente;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public Double getPrecoTotal() {
+		return precoTotal;
+	}
+	public void setPrecoTotal(Double precoTotal) {
+		this.precoTotal = precoTotal;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}	
 
 }
