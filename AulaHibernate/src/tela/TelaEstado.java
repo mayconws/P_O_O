@@ -66,6 +66,7 @@ public class TelaEstado {
 				estado.setNome(scan.next());
 				System.out.println("Digite a nova sigla: ");
 				estado.setSigla(scan.next());
+				scan.nextLine();
 
 				System.out.println("Alterando...");
 
@@ -78,6 +79,7 @@ public class TelaEstado {
 				System.out.println("---------------------------------------");
 				System.out.println("Informe o ID para realizar a exclusão: ");
 				estado.setId(scan.nextLong());
+				scan.nextLine();
 				dao.Remover(estado);
 
 			} else if (opcao == 5) {
