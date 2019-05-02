@@ -1,7 +1,5 @@
 package entidade;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ItensVenda {
+public class ItensCompra {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -17,7 +15,7 @@ public class ItensVenda {
 	private int quantidade;
 	private Double preco;
 	@ManyToOne
-	private Venda venda;
+	private Compra compra;
 	
 	public long getId() {
 		return id;
@@ -37,11 +35,11 @@ public class ItensVenda {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-	public Venda getVenda() {
-		return venda;
+	public Compra getCompra() {
+		return compra;
 	}
-	public void setVenda(Venda venda) {
-		this.venda = venda;
+	public void setCompra(Compra compra) {
+		this.compra = compra;
 	}	
-
+	
 }

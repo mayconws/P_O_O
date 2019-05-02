@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import entidade.Cliente;
-import fabrica.Fabrica;
+import loja.Loja;
 
 public class DAOCliente {
 	
@@ -16,7 +16,7 @@ public class DAOCliente {
 
 	public Cliente Inserir(Cliente cliente) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
+			EntityManagerFactory fabrica = Loja.get();
 			gerenciador = fabrica.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
@@ -32,8 +32,8 @@ public class DAOCliente {
 	
 	public Cliente Remover(Cliente cliente) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -49,8 +49,8 @@ public class DAOCliente {
 	
 	public Cliente Alterar(Cliente cliente) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -66,10 +66,10 @@ public class DAOCliente {
 	public List<Cliente> Buscar() {
 		try {
 
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 
-			return gerenciador.createQuery("from cliente").getResultList();
+			return gerenciador.createQuery("from Cliente").getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();

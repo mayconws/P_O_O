@@ -7,8 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import entidade.ItensVenda;
-import entidade.Produto;
-import fabrica.Fabrica;
+import loja.Loja;
 
 public class DAOItensVenda {
 
@@ -18,8 +17,8 @@ public class DAOItensVenda {
 	public ItensVenda Inserir(ItensVenda itensVenda) {
 
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -34,8 +33,8 @@ public class DAOItensVenda {
 
 	public ItensVenda Remover(ItensVenda itensVenda) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -51,8 +50,8 @@ public class DAOItensVenda {
 
 	public ItensVenda Alterar(ItensVenda itensVenda) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -68,10 +67,10 @@ public class DAOItensVenda {
 	public List<ItensVenda> Buscar() {
 		try {
 
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 
-			return gerenciador.createQuery("from itensVenda").getResultList();
+			return gerenciador.createQuery("from ItensVenda").getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();

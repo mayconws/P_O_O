@@ -16,8 +16,8 @@ public class Principal {
 		do {
 
 			System.out.println("Escolha uma das Opções do Menu: \n" + "\n1 - Estado: "
-					+ "\n2 - Cidade: " + "\n3 - Cliente: " + "\n4 - Produto: "
-					+ "\n5 - Venda: ");
+					+ "\n2 - Cidade: " + "\n3 - Cliente: " + "\n4 - Produto: " + "\n5 - Fornecedor: "					
+					+ "\n6 - Venda: " + "\n7 - Compra: " + "\n8 - financeiro: "+ "\n9 - Sair: ");
 			opcao = scan.nextInt();
 
 			if (opcao == 1) {
@@ -34,14 +34,32 @@ public class Principal {
 
 			} else if (opcao == 4) {
 				
-						
+				System.out.println("--- Falta Implementar ---");						
 				
 			} else if (opcao == 5) {
 				
+				System.out.println("--- Falta Implementar ---");	
+				
+			} else if (opcao == 6) {
+				
+				System.out.println("--- Falta Implementar ---");
+				
+			} else if (opcao == 7) {
+				
+				System.out.println("--- Falta Implementar ---");
+				
+			} else if (opcao == 8) {
+				
+				System.out.println("--- Falta Implementar ---");
+				
+			} else if (opcao == 9) {
+				
+				System.out.println("--- Fechando... Obrigado! ---");
+				break;
 				
 			}
 
-		} while (opcao != 5);
+		} while (opcao != 9);
 
 	}
 }

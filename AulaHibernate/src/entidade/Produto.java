@@ -18,6 +18,8 @@ public class Produto {
 	private Double preco;
 	@ManyToOne
 	private ItensVenda itensVenda;
+	@ManyToOne
+	private ItensCompra itensCompra;
 	public long getId() {
 		return id;
 	}
@@ -54,5 +56,11 @@ public class Produto {
 	public void setItensVenda(ItensVenda itensVenda) {
 		this.itensVenda = itensVenda;
 	}
-	
+	public ItensCompra getItensCompra() {
+		return itensCompra;
+	}
+	public void setItensCompra(ItensCompra itensCompra) {
+		this.itensCompra = itensCompra;
+	}	
+		
 }

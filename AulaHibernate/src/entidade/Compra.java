@@ -9,15 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Venda {
+public class Compra {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private Date data;
-	private Double precoTotal;
+	private String precoTotal;
 	@ManyToOne
-	private Cliente cliente;
+	private Fornecedor fornecedor;
 	
 	public long getId() {
 		return id;
@@ -31,17 +31,17 @@ public class Venda {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	public Double getPrecoTotal() {
+	public String getPrecoTotal() {
 		return precoTotal;
 	}
-	public void setPrecoTotal(Double precoTotal) {
+	public void setPrecoTotal(String precoTotal) {
 		this.precoTotal = precoTotal;
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public Fornecedor getFornecedor() {
+		return fornecedor;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}	
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import entidade.Estado;
-import fabrica.Fabrica;
+import loja.Loja;
 
 public class DAOEstado {
 
@@ -16,8 +16,8 @@ public class DAOEstado {
 
 	public Estado Inserir(Estado estado) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -32,8 +32,8 @@ public class DAOEstado {
 
 	public Estado Remover(Estado estado) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -49,8 +49,8 @@ public class DAOEstado {
 
 	public Estado Alterar(Estado estado) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -66,10 +66,10 @@ public class DAOEstado {
 	public List<Estado> Buscar() {
 		try {
 
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 
-			return gerenciador.createQuery("from estado").getResultList();
+			return gerenciador.createQuery("from Estado").getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();

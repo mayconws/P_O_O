@@ -1,5 +1,6 @@
 package tela;
 
+import java.util.List;
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;
@@ -11,13 +12,14 @@ import entidade.Estado;
 
 public class TelaEstado {
 
-	EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("aulaPU");
+	EntityManagerFactory loja = Persistence.createEntityManagerFactory("lojaGamesPU");
 
-	EntityManager gerenciador = fabrica.createEntityManager();
+	EntityManager gerenciador = loja.createEntityManager();
 
 	private Scanner scan = new Scanner(System.in);	
-	private String menu = "---- MENU ESTADO ----\n"+
-	" \n1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: \n";
+	private String menu = "---- MENU ESTADO ----"+
+	"\n 1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: \n 5 - Sair: "+
+	"---------------------";
 
 	public TelaEstado() {
 
@@ -36,38 +38,45 @@ public class TelaEstado {
 				DAOEstado dao = new DAOEstado();
 				System.out.println("-----------------");
 				System.out.println("Digite o estado: ");
-				String nome = scan.next();
-				scan.nextLine();
+				String nome = scan.nextLine();				
 				estado.setNome(nome);
-
-				Scanner scan1 = new Scanner(System.in);
+				
 				System.out.println("----------------");
 				System.out.println("Digite a sigla: ");
-				String sigla = scan.next();
-				estado.setSigla(sigla);
-				scan.nextLine();
+				String sigla = scan.nextLine();
+				estado.setSigla(sigla);				
 
 				dao.Inserir(estado);
 
 			} else if (opcao == 2) {
-
-				Estado estado = new Estado();
+				
 				DAOEstado dao = new DAOEstado();
-				dao.Buscar();
+				
+				System.out.println(" --- LISTAR TODOS OS ESTADOS ---");
+				List<Estado> est = dao.Buscar();
+
+				for (Estado estado : est) {
+					System.out.println(" -------------------------------------------------------------------------");
+					System.out.println("Id: "+estado.getId()+" - Estado: "+estado.getNome()+" - "+estado.getSigla());
+				
+				}
 
 			} else if (opcao == 3) {
 
 				Estado estado = new Estado();
 				DAOEstado dao = new DAOEstado();
+				
 				System.out.println("---------------------------------------");
 				System.out.println("Informe o ID para realizar a aleração: ");
-				estado.setId(scan.nextLong());
+				estado.setId(scan.nextLong());				
 				System.out.println("Digite o novo nome: ");
-				estado.setNome(scan.next());
-				System.out.println("Digite a nova sigla: ");
-				estado.setSigla(scan.next());
+				estado.setNome(scan.nextLine());
+				scan.nextLine();
+				
+				System.out.println("Digite a nova sigla: ");				
+				estado.setSigla(scan.nextLine());				
 
-				System.out.println("Alterando...");
+				System.out.println("--- Alterando ---");
 
 				dao.Alterar(estado);
 
@@ -78,11 +87,13 @@ public class TelaEstado {
 				System.out.println("---------------------------------------");
 				System.out.println("Informe o ID para realizar a exclusão: ");
 				estado.setId(scan.nextLong());
+				scan.nextLine();
 				dao.Remover(estado);
 
 			} else if (opcao == 5) {
 
 				System.out.println("---- Fechando o Sistema ----");
+				break;
 			}
 
 			System.out.println("Continuar? (s/n)");
@@ -90,5 +101,4 @@ public class TelaEstado {
 	} while (r.contentEquals("s"));
 
 	}
-
 }

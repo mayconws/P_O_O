@@ -7,8 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import entidade.Cidade;
-import entidade.Estado;
-import fabrica.Fabrica;
+import loja.Loja;
 
 public class DAOCidade {
 
@@ -17,8 +16,8 @@ public class DAOCidade {
 
 	public Cidade Inserir(Cidade cidade) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -33,8 +32,8 @@ public class DAOCidade {
 
 	public Cidade Remover(Cidade cidade) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -50,8 +49,8 @@ public class DAOCidade {
 
 	public Cidade Alterar(Cidade cidade) {
 		try {
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 			transacao = gerenciador.getTransaction();
 
 			transacao.begin();
@@ -67,10 +66,10 @@ public class DAOCidade {
 	public List<Cidade> Buscar() {
 		try {
 
-			EntityManagerFactory fabrica = Fabrica.get();
-			gerenciador = fabrica.createEntityManager();
+			EntityManagerFactory loja = Loja.get();
+			gerenciador = loja.createEntityManager();
 
-			return gerenciador.createQuery("from cidade").getResultList();
+			return gerenciador.createQuery("from Cidade").getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();
