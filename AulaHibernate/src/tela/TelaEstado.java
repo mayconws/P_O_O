@@ -70,11 +70,18 @@ public class TelaEstado {
 				System.out.println("Informe o ID para realizar a aleração: ");
 				estado.setId(scan.nextLong());				
 				System.out.println("Digite o novo nome: ");
+<<<<<<< HEAD
 				estado.setNome(scan.nextLine());
 				scan.nextLine();
 				
 				System.out.println("Digite a nova sigla: ");				
 				estado.setSigla(scan.nextLine());				
+=======
+				estado.setNome(scan.next());
+				System.out.println("Digite a nova sigla: ");
+				estado.setSigla(scan.next());
+				scan.nextLine();
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 
 				System.out.println("--- Alterando ---");
 

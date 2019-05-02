@@ -45,10 +45,19 @@ public class TelaCidade {
 				System.out.println("Digite a cidade: ");
 				String nome = scan.nextLine();			
 				cidade.setNome(nome);
+<<<<<<< HEAD
 				
 				System.out.println("-----------------------");
 				System.out.println("Digite o ID do estado: ");
 				long id = scan.nextLong();				
+=======
+
+				Scanner scan = new Scanner(System.in);
+				System.out.println("----------------");
+				System.out.println("Digite o ID do estado: ");
+				long id = scan.nextLong();
+				scan.nextLine();
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 				estado.setId(id);
 				cidade.setEstado(estado);				
 
@@ -56,6 +65,7 @@ public class TelaCidade {
 
 			} else if (opcao == 2) {
 
+<<<<<<< HEAD
 				DAOCidade dao = new DAOCidade();
 				Estado estado = new Estado();
 				
@@ -67,27 +77,49 @@ public class TelaCidade {
 					System.out.println("Id: "+cidade.getId()+" - Cidade: "+cidade.getNome()+" - Estado: "+cidade.getEstado());
 				
 				}
+=======
+				Cidade cidade = new Cidade();
+				DAOCidade dao = new DAOCidade();
+				dao.Buscar();
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 
 			} else if (opcao == 3) {
 
 				Cidade cidade = new Cidade();
 				Estado estado = new Estado();
+<<<<<<< HEAD
 				DAOCidade dao = new DAOCidade();
+=======
+				DAOCidade daocidade = new DAOCidade();
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 				DAOEstado daoestado = new DAOEstado();
 				System.out.println("---------------------------------------");
 				System.out.println("Informe o ID para realizar a aleração: ");
 				cidade.setId(scan.nextLong());
 				System.out.println("Digite o novo nome da cidade: ");
+<<<<<<< HEAD
 				cidade.setNome(scan.nextLine());
 				scan.nextLine();
 				System.out.println("Digite o novo ID do estado: ");
 				long id = scan.nextLong();				
 				estado.setId(id);
 				cidade.setEstado(estado);		
+=======
+				cidade.setNome(scan.next());
+				System.out.println("Digite a novo ID do estado: ");
+				long id = scan.nextLong();
+				scan.nextLine();
+				estado.setId(id);
+				cidade.setEstado(estado);
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 
 				System.out.println("--- Alterando ---");
 
+<<<<<<< HEAD
 				dao.Alterar(cidade);
+=======
+				daocidade.Alterar(cidade);
+>>>>>>> 5de2bbe0cd6e35fe4304b5726d345a9b7649e700
 
 			} else if (opcao == 4) {
 
