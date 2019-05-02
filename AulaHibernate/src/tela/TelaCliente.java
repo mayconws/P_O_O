@@ -21,7 +21,7 @@ public class TelaCliente {
 
 	private Scanner scan = new Scanner(System.in);	
 	private String menu = "---- MENU CLIENTE ----"+
-	"\n 1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: \n"+
+	"\n 1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: "+
 	"---------------------";
 
 	public TelaCliente() {
