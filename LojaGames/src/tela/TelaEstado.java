@@ -18,7 +18,7 @@ public class TelaEstado {
 
 	private Scanner scan = new Scanner(System.in);	
 	private String menu = "---- MENU ESTADO ----"+
-	"\n 1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: \n 5 - Sair: "+
+	"\n 1 - Inserir: \n 2 - Buscar: \n 3 - Alterar: \n 4 - Excluir: \n 5 - Sair: \n"+
 	"---------------------";
 
 	public TelaEstado() {
