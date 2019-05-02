@@ -74,7 +74,7 @@ public class TelaCliente {
 				List<Cliente> cli = dao.Buscar();
 
 				for (Cliente cliente : cli) {
-					System.out.println(" -----------------------------------------------------------------------");
+					System.out.println(" -------------------------------------------------------------------------------------");
 					System.out.println("Id: "+cliente.getId()+" - Cliente: "+cliente.getNome()+" - Endereço: "+
 					cliente.getEndereco()+" - RG: "+cliente.getRg()+" - CPF: "+cliente.getCpf()+" Cidade: "+cliente.getCidade());
 					

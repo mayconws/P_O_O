@@ -63,7 +63,7 @@ public class TelaCidade {
 				List<Cidade> cid = dao.Buscar();
 
 				for (Cidade cidade : cid) {
-					System.out.println(" -----------------------------------------------------------------------");
+					System.out.println(" ----------------------------------------------------------------------------------");
 					System.out.println("Id: "+cidade.getId()+" - Cidade: "+cidade.getNome()+" - Estado: "+cidade.getEstado());
 				
 				}
