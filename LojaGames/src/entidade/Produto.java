@@ -13,7 +13,7 @@ public class Produto {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String nome;
-	private int qtdManima;
+	private int qtdMaxima;
 	private int qtdMinima;
 	private Double preco;
 	@ManyToOne
@@ -33,10 +33,10 @@ public class Produto {
 		this.nome = nome;
 	}
 	public int getQtdManima() {
-		return qtdManima;
+		return qtdMaxima;
 	}
 	public void setQtdManima(int qtdManima) {
-		this.qtdManima = qtdManima;
+		this.qtdMaxima = qtdManima;
 	}
 	public int getQtdMinima() {
 		return qtdMinima;
