@@ -15,6 +15,7 @@
 		<class>entidade.ItensCompra</class>
 		<class>entidade.Fornecedor</class>
 		<class>entidade.Finaceiro</class>
+		<class>entidade.Pessoa</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/lojaGames" />
