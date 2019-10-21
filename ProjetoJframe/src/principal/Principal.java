@@ -17,13 +17,14 @@ public class Principal extends JFrame implements ActionListener{
 	private JMenu menu = new JMenu("Menu");	
 	
 	private JMenuItem jogoVelha = new JMenuItem("Jogo da Velha");
-	private JMenuItem calculadora = new JMenuItem("calculadora");
+	private JMenuItem calculadora = new JMenuItem("Calculadora");
+	private JMenuItem frases = new JMenuItem("Frases do Dia");
 	
 	private JDesktopPane desk = new JDesktopPane();
 	private TelaJogoDaVelha tjv;
 	private TelaCalculadora tcal;
+	private TelaFrasesDoDia tfr;
 	
-	//modificador de acesso - nome classe
 	public Principal() {
 		definir("Tela Principal");		
 	}
@@ -40,6 +41,7 @@ public class Principal extends JFrame implements ActionListener{
 		
 		menu.add(jogoVelha);
 		menu.add(calculadora);
+		menu.add(frases);
 		
 		jogoVelha.addActionListener(this);
 		desk.setBackground(Color.gray);
@@ -49,10 +51,14 @@ public class Principal extends JFrame implements ActionListener{
 		calculadora.addActionListener(this);
 		add(desk);
 		setVisible(true);
+		
+		frases.addActionListener(this);
+		add(desk);
+		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		//tipo nome new construtor
+		
 		String t = "Jogos Divertidos 1.0";
 		Principal p = new Principal(t);
 	}
@@ -70,6 +76,13 @@ public class Principal extends JFrame implements ActionListener{
 			if(tcal == null) {
 				tcal = new TelaCalculadora();			
 				desk.add(tcal);			
+			}
+		}
+		
+		if(e.getSource() == frases) {
+			if(tfr == null) {
+				tfr = new TelaFrasesDoDia();			
+				desk.add(tfr);			
 			}
 		}
 	}

@@ -14,13 +14,15 @@ import javax.swing.JInternalFrame;
 public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 	
 	List<JButton> botoes = new ArrayList<JButton>();
-	private String ValorAtual = "X";
+	private String valorAtual = "X";	
 	
 	private GridLayout layout = new GridLayout(3,3);
 		
 	public TelaJogoDaVelha() {
 		super("Jogo da velha", true, true, true);
-		setLayout(layout);		
+		setLayout(layout);	
+		setSize(400,300);
+		setVisible(true);
 		JButton botao;
 		for(int i=0; i < 9; i++) {			
 			botao = new JButton();			
@@ -29,20 +31,17 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 			botao.addActionListener(this);
 			add(botao);
 		}		
-		setSize(400,300);
-		setVisible(true);		
+				
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton botaoClicado = (JButton) e.getSource();
+		JButton botaoClicado = (JButton) e.getSource();			
 		
+		valorAtual = valorAtual == "X" ? "0": "X";
+		botaoClicado.setText(valorAtual);		
 		
-		
-		ValorAtual = ValorAtual == "X" ? "0": "X";
-		botaoClicado.setText(ValorAtual);				
-		
-		if(ValorAtual == "X") {
+		if(valorAtual == "X") {
 			botaoClicado.setBackground(Color.red);
 			
 		} else {
