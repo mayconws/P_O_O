@@ -22,7 +22,7 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 	ImageIcon verde = new ImageIcon(getClass().getResource("bt_verde.png"));
 	ImageIcon vermelho = new ImageIcon(getClass().getResource("bt_vermelho.png"));	
 	
-	JPanel layout = new JPanel(new GridLayout(3, 3, 8, 8));
+	JPanel layout = new JPanel(new GridLayout(3, 3, 6, 6));
 	
 	int rodadas = 0;
 	
@@ -53,13 +53,14 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 	}
 	
 	public class BotaoPersonalizado extends JButton{
+		
 		int quem = 0;
 		
 		public BotaoPersonalizado () {
-			setBackground(new Color(184,202,212));
+			setBackground(new Color(230,232,250));
 			addActionListener(e->{
-				if(quem==0) {
-					if(jogadorVez==JOGADOR_1) {
+				if(quem == 0) {
+					if(jogadorVez == JOGADOR_1) {
 						setIcon(verde);
 						quem = JOGADOR_1;
 					} else {
@@ -71,7 +72,7 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 						System.exit(0);
 					}
 					rodadas++;
-					if(rodadas==9) {
+					if(rodadas == 9) {
 						JOptionPane.showMessageDialog(null,"Ninguém venceu!");
 						System.exit(0);
 					}
@@ -94,28 +95,28 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 		
 		public boolean testarVitoria(int jog) {
 			
-			if(botoes[0].quem==jog && botoes[1].quem==jog && botoes[2].quem==jog) {
+			if(botoes[0].quem == jog && botoes[1].quem == jog && botoes[2].quem == jog) {
 				return true;
 			}
-			if(botoes[3].quem==jog && botoes[4].quem==jog && botoes[5].quem==jog) {
+			if(botoes[3].quem == jog && botoes[4].quem == jog && botoes[5].quem == jog) {
 				return true;
 			}
-			if(botoes[6].quem==jog && botoes[7].quem==jog && botoes[8].quem==jog) {
+			if(botoes[6].quem == jog && botoes[7].quem == jog && botoes[8].quem == jog) {
 				return true;
 			}
-			if(botoes[0].quem==jog && botoes[3].quem==jog && botoes[6].quem==jog) {
+			if(botoes[0].quem == jog && botoes[3].quem == jog && botoes[6].quem == jog) {
 				return true;
 			}
-			if(botoes[1].quem==jog && botoes[4].quem==jog && botoes[7].quem==jog) {
+			if(botoes[1].quem == jog && botoes[4].quem == jog && botoes[7].quem == jog) {
 				return true;
 			}
-			if(botoes[2].quem==jog && botoes[5].quem==jog && botoes[8].quem==jog) {
+			if(botoes[2].quem == jog && botoes[5].quem == jog && botoes[8].quem == jog) {
 				return true;
 			}
-			if(botoes[0].quem==jog && botoes[4].quem==jog && botoes[8].quem==jog) {
+			if(botoes[0].quem == jog && botoes[4].quem == jog && botoes[8].quem == jog) {
 				return true;
 			}
-			if(botoes[2].quem==jog && botoes[4].quem==jog && botoes[6].quem==jog) {
+			if(botoes[2].quem == jog && botoes[4].quem == jog && botoes[6].quem == jog) {
 				return true;
 			}
 			return false;
