@@ -57,7 +57,7 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 		int quem = 0;
 		
 		public BotaoPersonalizado () {
-			setBackground(new Color(230,232,250));
+			setBackground(new Color(175,238,238));
 			addActionListener(e->{
 				if(quem == 0) {
 					if(jogadorVez == JOGADOR_1) {

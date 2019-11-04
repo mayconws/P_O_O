@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -14,7 +15,7 @@ public class Principal extends JFrame implements ActionListener{
 	
 	private JMenuBar jmb = new JMenuBar();
 	
-	private JMenu menu = new JMenu("Menu");	
+	private JMenu menu = new JMenu("Menu");		
 	
 	private JMenuItem jogoVelha = new JMenuItem("Jogo da Velha");
 	private JMenuItem calculadora = new JMenuItem("Calculadora");
@@ -39,7 +40,7 @@ public class Principal extends JFrame implements ActionListener{
 		setJMenuBar(jmb);
 		jmb.add(menu);				
 		
-		menu.add(jogoVelha);
+		menu.add(jogoVelha);		
 		menu.add(calculadora);
 		menu.add(frases);
 		
