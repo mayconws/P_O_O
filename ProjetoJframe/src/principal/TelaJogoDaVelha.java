@@ -141,10 +141,7 @@ public class TelaJogoDaVelha extends JInternalFrame implements ActionListener {
 
 		  }
 
-		  // m�todo executado a cada jogada
-		  // posX é a posição no arrayX do botão
-		  // posY é a posição no arrayY do botão
-		  // jogador é o número do jogador (ou 1 ou 2)
+		  // m�todo executado a cada jogada		  
 		  private void jogar(int posX,int posY, int jogador){
 			  
 		    String texto = (jogador==1) ? "X" : "O";
