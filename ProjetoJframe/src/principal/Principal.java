@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -17,14 +16,14 @@ public class Principal extends JFrame implements ActionListener{
 	
 	private JMenu menu = new JMenu("Menu");		
 	
-	private JMenuItem jogoVelha = new JMenuItem("Jogo da Velha");
+	private JMenuItem jogoVelha = new JMenuItem("Jogo da Velha");	
 	private JMenuItem calculadora = new JMenuItem("Calculadora");
-	private JMenuItem frases = new JMenuItem("Frases do Dia");
+	private JMenuItem forca = new JMenuItem("Jogo da Forca");
 	
 	private JDesktopPane desk = new JDesktopPane();
-	private TelaJogoDaVelha tjv;
+	private TelaJogoDaVelha tjv;	
 	private TelaCalculadora tcal;
-	private TelaFrasesDoDia tfr;
+	
 	
 	public Principal() {
 		definir("Tela Principal");		
@@ -41,21 +40,17 @@ public class Principal extends JFrame implements ActionListener{
 		jmb.add(menu);				
 		
 		menu.add(jogoVelha);		
-		menu.add(calculadora);
-		menu.add(frases);
+		menu.add(calculadora);		
 		
 		jogoVelha.addActionListener(this);
 		desk.setBackground(Color.gray);
 		add(desk);
 		setVisible(true);
-		
+				
 		calculadora.addActionListener(this);
 		add(desk);
-		setVisible(true);
+		setVisible(true);		
 		
-		frases.addActionListener(this);
-		add(desk);
-		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
@@ -71,7 +66,7 @@ public class Principal extends JFrame implements ActionListener{
 				tjv = new TelaJogoDaVelha();			
 				desk.add(tjv);			
 			}
-		}
+		}		
 		
 		if(e.getSource() == calculadora) {
 			if(tcal == null) {
@@ -80,12 +75,6 @@ public class Principal extends JFrame implements ActionListener{
 			}
 		}
 		
-		if(e.getSource() == frases) {
-			if(tfr == null) {
-				tfr = new TelaFrasesDoDia();			
-				desk.add(tfr);			
-			}
-		}
-	}
+	}		
 
 }
